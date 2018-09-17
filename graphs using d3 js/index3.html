@@ -1,0 +1,28 @@
+<html>
+<body>
+  <script>
+    window.addEventListener('resize', function (event) {
+      $("#chart").width(window.innerWidth * 0.9);
+      $("#chart").height(window.innerHeight);
+    });
+  </script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="pieChart.js"></script>
+<div id="chart" style="width: 900;height: 500">
+</div>
+<script>
+var data=[{ROBBERY:"ATTEMPT: ARMED-KNIFE/CUT INSTR",Count:1892},{ROBBERY:"AGGRAVATED VEHICULAR HIJACKING",Count:8104},{ROBBERY:"STRONGARM - NO WEAPON",Count:79718},{ROBBERY:"ARMED: HANDGUN",Count:79371},{ROBBERY:"ARMED: OTHER DANGEROUS WEAPON",Count:11425},{ROBBERY:"ARMED:KNIFE/CUTTING INSTRUMENT",Count:10508},{ROBBERY:"AGGRAVATED",Count:11072},{ROBBERY:"VEHICULAR HIJACKING",Count:4210},{ROBBERY:"ATTEMPT: STRONGARM-NO WEAPON",Count:8919},{ROBBERY:"ATTEMPT: ARMED-OTHER DANG WEAP",Count:1829},{ROBBERY:"ATTEMPT: ARMED-OTHER FIREARM",Count:252},{ROBBERY:"ARMED: OTHER FIREARM",Count:1189},{ROBBERY:"ATTEMPT: AGGRAVATED",Count:736},{ROBBERY:"ATTEMPT: ARMED-HANDGUN",Count:7235}];
+    $("#chart").empty();
+    var pieChartConfig = {
+    mainDiv: "#chart",
+    colorRange: ["#f44842", "#f4b841", "#f4f141", "#46f441", "#41f4d9", "#4941f4", "#f441d6",'#29339B', '#74A4BC', '#B6D6CC', '#F1FEC6', '#2FF3A20', '#FFC200', '#003049'],
+    data: data,
+    caption:"ROBBERY",
+    tooltipLable:"ROBBERY",
+    value:"Count"
+  };
+  var pieChart = new pieChart(pieChartConfig);
+</script>
+</body>
+</html>
